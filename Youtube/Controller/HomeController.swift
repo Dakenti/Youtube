@@ -95,8 +95,9 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
     }
     
+    let settingsLauncher = SettingsLauncher()
     @objc func handleMoreBarButton(){
-        
+        settingsLauncher.showSettings()
     }
     
     let menuBar: MenuBar = {
