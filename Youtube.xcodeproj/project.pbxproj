@@ -17,6 +17,7 @@
 		25A2028321A98AEA00B3205B /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A2028221A98AEA00B3205B /* MenuBar.swift */; };
 		25A2028621B0518D00B3205B /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A2028521B0518D00B3205B /* Video.swift */; };
 		25A2028821B7EF5B00B3205B /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A2028721B7EF5B00B3205B /* SettingsLauncher.swift */; };
+		25A2028A21B82D7B00B3205B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A2028921B82D7B00B3205B /* SettingsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		25A2028221A98AEA00B3205B /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		25A2028521B0518D00B3205B /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		25A2028721B7EF5B00B3205B /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
+		25A2028921B82D7B00B3205B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				2553A2FF21966B79005D9118 /* HomeController.swift */,
+				25A2028721B7EF5B00B3205B /* SettingsLauncher.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -96,7 +99,7 @@
 			children = (
 				25A2028021A113E900B3205B /* VideoCell.swift */,
 				25A2028221A98AEA00B3205B /* MenuBar.swift */,
-				25A2028721B7EF5B00B3205B /* SettingsLauncher.swift */,
+				25A2028921B82D7B00B3205B /* SettingsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				25A2028821B7EF5B00B3205B /* SettingsLauncher.swift in Sources */,
 				25A2027C21A1135B00B3205B /* Extention.swift in Sources */,
 				2553A2FE21966B79005D9118 /* AppDelegate.swift in Sources */,
+				25A2028A21B82D7B00B3205B /* SettingsCell.swift in Sources */,
 				25A2028321A98AEA00B3205B /* MenuBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
