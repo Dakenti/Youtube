@@ -13,6 +13,8 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     let cellId = "CellID"
     let imageNames = ["home", "trending", "subscriptions", "account"]
     
+    var homeController: HomeController?
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -32,6 +34,36 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         
         let selectedIndexPath = IndexPath(item: 0, section: 0)
         collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .centeredHorizontally)
+        
+        setupHorizontalSliddingWhiteBar()
+    }
+    
+    var leftAnchorOfHorizontalBar: NSLayoutConstraint?
+    
+    func setupHorizontalSliddingWhiteBar(){
+        let horizontalBar = UIView()
+        horizontalBar.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        horizontalBar.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(horizontalBar)
+        
+        leftAnchorOfHorizontalBar = horizontalBar.leftAnchor.constraint(equalTo: self.leftAnchor)
+        leftAnchorOfHorizontalBar?.isActive = true
+        
+        horizontalBar.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        horizontalBar.heightAnchor.constraint(equalToConstant: 4).isActive = true
+        horizontalBar.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/4).isActive = true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let x = CGFloat(indexPath.item) * frame.width / 4
+        
+//        to change dispotion of the horizontal bar
+//        leftAnchorOfHorizontalBar?.constant = x
+//
+//        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+//            self.layoutIfNeeded()
+//        }, completion: nil)
+        homeController?.changeHorizantalBarPostionByPressingMenuBarItem(menuIndex: indexPath.item)
     }
     
     required init?(coder aDecoder: NSCoder) {
