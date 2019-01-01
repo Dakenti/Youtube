@@ -11,8 +11,22 @@ import UIKit
 class API: NSObject {
     static let sharedInstance = API()
     
+    let baseURL = "https://s3-us-west-2.amazonaws.com/youtubeassets"
+    
     func fetchVideos(completion: @escaping ([Video])->()){
-        let url = URL(string: "https://s3-us-west-2.amazonaws.com/youtubeassets/home.json")
+        fetchVideosForURL(stringURL: "\(baseURL)/home.json", completion: completion)
+    }
+    
+    func fetchSubscriptionVideos(completion: @escaping ([Video])->()){
+        fetchVideosForURL(stringURL: "\(baseURL)/subscriptions.json", completion: completion)
+    }
+    
+    func fetchTrendingVideos(completion: @escaping ([Video])->()){
+        fetchVideosForURL(stringURL: "\(baseURL)/trending.json", completion: completion)
+    }
+    
+    func fetchVideosForURL(stringURL: String, completion: @escaping ([Video])->()){
+        let url = URL(string: stringURL)
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             if error != nil {
                 print(error!)
