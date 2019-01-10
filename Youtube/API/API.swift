@@ -28,41 +28,24 @@ class API: NSObject {
     func fetchVideosForURL(stringURL: String, completion: @escaping ([Video])->()){
         let url = URL(string: stringURL)
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            if error != nil {
-                print(error!)
+            if error != nil{
+                print(error ?? "")
                 return
             }
             
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-                
-                var videos = [Video]()
-                
-                for dictionary in json as! [[String: AnyObject]] {
-                    
-                    let video = Video()
-                    video.title = dictionary["title"] as? String
-                    video.thumbnalImage = dictionary["thumbnail_image_name"] as? String
-                    video.numberOfViews = dictionary["number_of_views"] as? NSNumber
-                    
-                    let channelDictionary = dictionary["channel"] as! [String: AnyObject]
-                    
-                    let channel = Channel()
-                    channel.name = channelDictionary["name"] as? String
-                    channel.profileIamge = channelDictionary["profile_image_name"] as? String
-                    
-                    video.channel = channel
-                    
-                    videos.append(video)
-                }
+            do{
+                guard let data = data else {return}
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let videos = try decoder.decode([Video].self, from: data)
                 
                 DispatchQueue.main.async {
                     completion(videos)
                 }
-            } catch let jsonError {
-                print(jsonError)
+                
+            } catch let err {
+                print(err)
             }
-            
-            }.resume()
+        }.resume()
     }
 }

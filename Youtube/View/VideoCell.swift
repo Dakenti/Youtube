@@ -39,8 +39,8 @@ class VideoCell: BaseCell{
             numberFormatter.numberStyle = .decimal
             
             titleLabel.text = title
-            subtitleTextView.text = "\(channelName) - \(numberFormatter.string(from: numberOfViews) ?? "0") - 2 years ago"
-            
+            subtitleTextView.text = "\(channelName) • \(numberFormatter.string(from: NSNumber(value: numberOfViews))!) • 2 years ago"
+
 //          to make cell resizable according to text size
 //          dont forget to change the number of lines of UILabel to 2
             let size = CGSize(width: frame.width - 16 - 44 - 8 - 16, height: 1000)
@@ -56,12 +56,12 @@ class VideoCell: BaseCell{
     }
     
     func fetchThumbnailImage(){
-        guard let thumbnailImageUrl = video?.thumbnalImage else {fatalError()}
+        guard let thumbnailImageUrl = video?.thumbnailImageName else {fatalError()}
         thumnailImageView.loadImageWithURLString(urlString: thumbnailImageUrl)
     }
     
     func fetchProfileImage(){
-        guard let profileImageUrl = video?.channel?.profileIamge else {fatalError()}
+        guard let profileImageUrl = video?.channel?.profileImageName else {fatalError()}
         profileImageView.loadImageWithURLString(urlString: profileImageUrl)
     }
     

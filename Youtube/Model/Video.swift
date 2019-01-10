@@ -8,21 +8,21 @@
 
 import UIKit
 
-class Video: NSObject {
+// Do not forget that names of instance of the struct model should MATCH the naming in the JSON
+
+struct Video: Decodable {
     
-    var thumbnalImage: String?
+    var thumbnailImageName: String?
     var title: String?
-    var numberOfViews: NSNumber?
-    var dateOfUpload: NSDate?
+    var numberOfViews: Int?
+    var uploadDate: Date?
     
     var channel: Channel?
     
 }
 
-
-class Channel: NSObject {
-    
+struct Channel: Decodable {
     var name: String?
-    var profileIamge: String?
-    
+    var profileImageName: String?
 }
+

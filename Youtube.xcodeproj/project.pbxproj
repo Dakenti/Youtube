@@ -22,6 +22,7 @@
 		25A2028F21D4E01E00B3205B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A2028E21D4E01E00B3205B /* FeedCell.swift */; };
 		25A2029121DB083700B3205B /* TrendingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A2029021DB083700B3205B /* TrendingCell.swift */; };
 		25A2029321DB085200B3205B /* SubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A2029221DB085200B3205B /* SubscriptionCell.swift */; };
+		25A2029521DC53A100B3205B /* VideoLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A2029421DC53A100B3205B /* VideoLauncher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		25A2028E21D4E01E00B3205B /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		25A2029021DB083700B3205B /* TrendingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCell.swift; sourceTree = "<group>"; };
 		25A2029221DB085200B3205B /* SubscriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCell.swift; sourceTree = "<group>"; };
+		25A2029421DC53A100B3205B /* VideoLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoLauncher.swift; path = "../../../../iOS apps/Youtube/Youtube/Extension/VideoLauncher.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				25A2027B21A1135B00B3205B /* Extention.swift */,
+				25A2029421DC53A100B3205B /* VideoLauncher.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				25A2028121A113E900B3205B /* VideoCell.swift in Sources */,
 				25A2028821B7EF5B00B3205B /* SettingsLauncher.swift in Sources */,
 				25A2027C21A1135B00B3205B /* Extention.swift in Sources */,
+				25A2029521DC53A100B3205B /* VideoLauncher.swift in Sources */,
 				2553A2FE21966B79005D9118 /* AppDelegate.swift in Sources */,
 				25A2028A21B82D7B00B3205B /* SettingsCell.swift in Sources */,
 				25A2028D21BE9D6C00B3205B /* API.swift in Sources */,
